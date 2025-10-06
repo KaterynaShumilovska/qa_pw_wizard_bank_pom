@@ -13,7 +13,7 @@ export class TransactionsPage {
   }
 
   async open() {
-    await this.page.goto('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/listTx');
+    await this.page.goto('./#/listTx');
   }
   async reload() {
     await this.page.reload();

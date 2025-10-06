@@ -7,7 +7,7 @@ export class BankHomePage {
   }
 
   async open() {
-    await this.page.goto('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login');
+    await this.page.goto('./#/login');
   }
 
   async clickCustomerLoginButton() {

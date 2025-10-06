@@ -8,12 +8,12 @@ export class CustomerLoginPage {
   }
 
   async open() {
-    await this.page.goto('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/customer');
+    await this.page.goto('./#/customer');
   }
 
   async waitForOpened() {
     await this.page.waitForURL(
-      'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/customer',
+      './#/customer',
     );
   }
 

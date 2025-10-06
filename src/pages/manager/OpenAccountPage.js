@@ -8,7 +8,7 @@ export class OpenAccountPage {
   }
 
   async open() {
-    await this.page.goto('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/openAccount');
+    await this.page.goto('./#/manager/openAccount');
   }
 
   async selectCustomerOption(fullName) {

@@ -6,18 +6,18 @@ export class CustomersListPage {
     this.rowOfCustomersTable = page.locator('tbody tr');
     this.lastRowOfCustomersTable = page.locator('tbody tr').last();
     this.customerRowOfCustomersTable = (firstName, lastName, postCode) =>
-      page.locator('tbody tr').filter({
-        has: page.locator(`td:has-text("${firstName}")`)
+      this.page.locator('tbody tr').filter({
+        has: this.page.locator(`td:has-text("${firstName}")`)
       }).filter({
-        has: page.locator(`td:has-text("${lastName}")`)
+        has: this.page.locator(`td:has-text("${lastName}")`)
       }).filter({
-        has: page.locator(`td:has-text("${postCode}")`)
+        has: this.page.locator(`td:has-text("${postCode}")`)
       });
     this.searchCustomerLocator = page.getByPlaceholder('Search Customer');
   }
 
   async open() {
-    await this.page.goto('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list');
+    await this.page.goto('./#/manager/list');
   }
 
   async deleteCustomer(firstName, lastName, postCode) {
@@ -37,7 +37,7 @@ export class CustomersListPage {
   }
 
   async assertCustomerAccountNumberIsEmpty() {
-    await expect(this.lastRowOfCustomersTable.locator('td').nth(3)).toHaveText('');
+    await expect(this.lastRowOfCustomersTable.locator('td').nth(3)).toHaveText(/^\s*$/);
   }
 
   async assertCustomerAccountNumberIsFilled(firstName, lastName, postCode) {
