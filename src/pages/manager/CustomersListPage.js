@@ -17,7 +17,7 @@ export class CustomersListPage {
   }
 
   async open() {
-    await this.page.goto('#/manager/list');
+    await this.page.goto('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list');
   }
 
   async deleteCustomer(firstName, lastName, postCode) {
